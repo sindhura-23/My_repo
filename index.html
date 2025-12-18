@@ -18,7 +18,6 @@
     body {
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
       background: linear-gradient(135deg, #667eea, #764ba2);
       padding: 20px;
@@ -30,39 +29,39 @@
       border-radius: 22px;
       max-width: 650px;
       width: 100%;
-      text-align: center;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     }
 
     h1 {
-      font-size: 2.3rem;
+      font-size: 2rem;
       color: #333;
       margin-bottom: 25px;
+      text-align: center;
     }
 
-    .typewriter p {
-      font-size: 1.05rem;
+    .typewriter p, .typewriter div {
+      font-size: 0.95rem;
       color: #555;
-      line-height: 1.75;
+      line-height: 1.7;
       margin-bottom: 18px;
       opacity: 0;
       transition: opacity 1.2s ease-in-out;
+      text-align: left;  /* default align left */
     }
 
-    .typewriter p.show {
+    .typewriter div.centered {
+      text-align: center; /* only center this div */
+    }
+
+    .typewriter p.show, .typewriter div.show {
       opacity: 1;
-    }
-
-    .small-text {
-      font-size: 0.95rem;
-      color: #666;
-      margin-top: 10px;
     }
 
     .footer {
       margin-top: 30px;
       font-size: 0.9rem;
       color: #888;
+      text-align: center;
     }
   </style>
 </head>
@@ -129,19 +128,23 @@
     But one thing I know for sure —
     I truly liked you. ❤️</p>
 
+
+    <div class="centered">I really miss you so much 💔</div>
+
   
-    <div class= I really miss you so much</div>
+
+  
   </div>
 
   <script>
-    const paragraphs = document.querySelectorAll('.typewriter p');
+    const elements = document.querySelectorAll('.typewriter p, .typewriter div');
     let index = 0;
 
     function showNext() {
-      if (index < paragraphs.length) {
-        paragraphs[index].classList.add('show');
+      if (index < elements.length) {
+        elements[index].classList.add('show');
         index++;
-        setTimeout(showNext, 1800); // delay between paragraphs
+        setTimeout(showNext, 1800);
       }
     }
 
