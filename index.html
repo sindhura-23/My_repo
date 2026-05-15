@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Sister 🎂</title>
+<title>Happy Birthday Yallu</title>
 
 <style>
 
@@ -21,7 +21,12 @@ body{
 
     font-family:Arial, sans-serif;
 
-    background-image:url('Snapchat-851764982.jpg');
+    background:
+    linear-gradient(rgba(0,0,0,0.65),
+    rgba(0,0,0,0.65)),
+
+    url('Snapchat-1803626967.jpg');
+
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -29,18 +34,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-}
 
-/* Dark Overlay */
-
-.overlay{
-
-    position:absolute;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,0.45);
+    padding:15px;
 }
 
 /* Message Box */
@@ -50,19 +45,20 @@ body{
     position:relative;
     z-index:2;
 
-    width:90%;
+    width:100%;
+    max-width:500px;
 
     text-align:center;
 
-    padding:40px;
+    padding:25px;
 
     border-radius:25px;
 
     background:rgba(0,0,0,0.35);
 
-    backdrop-filter:blur(4px);
+    backdrop-filter:blur(5px);
 
-    box-shadow:0 0 25px rgba(255,255,255,0.2);
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
 }
 
 /* Animated Birthday Text */
@@ -71,14 +67,15 @@ body{
 
     display:flex;
     flex-direction:column;
-    gap:18px;
+
+    gap:12px;
 }
 
 .birthday-text span{
 
     opacity:0;
 
-    font-size:58px;
+    font-size:40px;
 
     font-weight:bold;
 
@@ -110,7 +107,7 @@ body{
 
     from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(30px);
     }
 
     to{
@@ -135,108 +132,87 @@ body{
     }
 }
 
-/* Message Paragraph */
+/* Paragraph */
 
 p{
 
     color:white;
 
-    font-size:23px;
+    font-size:18px;
 
-    line-height:1.8;
+    line-height:1.7;
 
-    margin-top:25px;
+    margin-top:18px;
 }
 
 /* Love Text */
 
 .love{
 
-    margin-top:25px;
+    margin-top:20px;
 
     color:#ffd6eb;
 
-    font-size:30px;
+    font-size:24px;
 
     font-weight:bold;
 }
 
-/* Fireworks */
+/* Blast Effect */
 
-.firework{
+.firecracker{
 
     position:absolute;
 
-    width:10px;
-    height:10px;
+    width:12px;
+    height:12px;
 
     border-radius:50%;
 
-    animation:blast 1.8s infinite;
+    background:white;
+
+    pointer-events:none;
+
+    animation:explode 1s ease-out forwards;
 }
 
-.firework:nth-child(1){
-
-    top:15%;
-    left:20%;
-
-    background:red;
-
-    animation-delay:0s;
-}
-
-.firework:nth-child(2){
-
-    top:25%;
-    left:75%;
-
-    background:yellow;
-
-    animation-delay:0.5s;
-}
-
-.firework:nth-child(3){
-
-    top:70%;
-    left:15%;
-
-    background:cyan;
-
-    animation-delay:1s;
-}
-
-.firework:nth-child(4){
-
-    top:75%;
-    left:80%;
-
-    background:magenta;
-
-    animation-delay:1.5s;
-}
-
-@keyframes blast{
+@keyframes explode{
 
     0%{
-
         transform:scale(1);
-
         opacity:1;
 
         box-shadow:
         0 0 10px white,
-        0 0 20px white;
+        0 0 20px yellow,
+        0 0 40px pink;
     }
 
     100%{
-
-        transform:scale(15);
-
+        transform:scale(18);
         opacity:0;
 
         box-shadow:
         0 0 50px white,
-        0 0 100px white;
+        0 0 80px yellow,
+        0 0 120px pink;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .birthday-text span{
+        font-size:32px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    .love{
+        font-size:22px;
     }
 }
 
@@ -245,26 +221,15 @@ p{
 
 <body>
 
-<div class="overlay"></div>
-
-<!-- Fireworks -->
-
-<div class="firework"></div>
-<div class="firework"></div>
-<div class="firework"></div>
-<div class="firework"></div>
-
-<!-- Birthday Message -->
-
 <div class="message">
 
     <div class="birthday-text">
 
         <span>Happy ✨</span>
 
-        <span>Birthday ✨🌸🎉</span>
+        <span>Birthday 🎂</span>
 
-        <span>My Lovely Sister 🌸🥰</span>
+        <span> My dear sweet ♥️</span>
 
     </div>
 
@@ -278,8 +243,8 @@ p{
         with love, laughter and beautiful memories ✨
     </p>
 
-<p>
-        you will always be my favorite person forever 💕
+    <p>
+        You will always be my favorite person forever 💕
     </p>
 
     <div class="love">
@@ -287,6 +252,28 @@ p{
     </div>
 
 </div>
+
+<script>
+
+document.addEventListener("click", function(e){
+
+    let blast = document.createElement("div");
+
+    blast.className = "firecracker";
+
+    blast.style.left = e.pageX + "px";
+
+    blast.style.top = e.pageY + "px";
+
+    document.body.appendChild(blast);
+
+    setTimeout(() => {
+        blast.remove();
+    },1000);
+
+});
+
+</script>
 
 </body>
 </html>
