@@ -39,6 +39,71 @@ body{
     padding:15px;
 }
 
+/* Floating Sparkles */
+
+.sparkle{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:twinkle 3s infinite;
+}
+
+.sparkle:nth-child(1){
+    top:10%;
+    left:20%;
+    animation-delay:0s;
+}
+
+.sparkle:nth-child(2){
+    top:20%;
+    left:80%;
+    animation-delay:1s;
+}
+
+.sparkle:nth-child(3){
+    top:70%;
+    left:15%;
+    animation-delay:2s;
+}
+
+.sparkle:nth-child(4){
+    top:80%;
+    left:75%;
+    animation-delay:1.5s;
+}
+
+.sparkle:nth-child(5){
+    top:50%;
+    left:50%;
+    animation-delay:0.5s;
+}
+
+@keyframes twinkle{
+
+    0%{
+        opacity:0.2;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(3);
+        box-shadow:0 0 20px white;
+    }
+
+    100%{
+        opacity:0.2;
+        transform:scale(1);
+    }
+}
+
 /* Message Box */
 
 .message{
@@ -60,7 +125,7 @@ body{
     box-shadow:0 0 20px rgba(255,255,255,0.2);
 }
 
-/* Animated Birthday Text */
+/* Birthday Text */
 
 .birthday-text{
 
@@ -74,20 +139,20 @@ body{
 
     opacity:0;
 
-    font-size:42px;
+    font-size:45px;
 
     font-weight:bold;
 
-    color:#ff66b2;
+    color:red;
 
     text-shadow:
-    0 0 10px #ff66b2,
-    0 0 20px #ff66b2,
+    0 0 10px red,
+    0 0 20px red,
     0 0 40px white;
 
     animation:
-    showWords 1.5s forwards,
-    sparkle 1.5s infinite alternate;
+    popUp 1.2s forwards,
+    glow 1.5s infinite alternate;
 }
 
 .birthday-text span:nth-child(1){
@@ -102,32 +167,41 @@ body{
     animation-delay:3s;
 }
 
-@keyframes showWords{
+/* Pop Animation */
 
-    from{
+@keyframes popUp{
+
+    0%{
         opacity:0;
-        transform:translateY(30px);
+        transform:scale(0.3);
     }
 
-    to{
+    70%{
         opacity:1;
-        transform:translateY(0);
+        transform:scale(1.2);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
     }
 }
 
-@keyframes sparkle{
+/* Glow */
+
+@keyframes glow{
 
     from{
         text-shadow:
-        0 0 10px #ff66b2,
-        0 0 20px #ff66b2;
+        0 0 10px red,
+        0 0 20px red;
     }
 
     to{
         text-shadow:
         0 0 20px white,
-        0 0 40px #ff66b2,
-        0 0 60px white;
+        0 0 40px red,
+        0 0 60px red;
     }
 }
 
@@ -161,7 +235,7 @@ p{
     text-shadow:0 0 10px black;
 }
 
-/* Firecracker Blast */
+/* Firecracker */
 
 .firecracker{
 
@@ -206,7 +280,7 @@ p{
     }
 }
 
-/* Mobile Responsive */
+/* Mobile */
 
 @media(max-width:600px){
 
@@ -228,13 +302,23 @@ p{
 
 <body>
 
+<!-- Sparkles -->
+
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+
+<!-- Message -->
+
 <div class="message">
 
     <div class="birthday-text">
 
-        <span>Happy ✨🎉🌸</span>
+        <span>Happy ✨</span>
 
-        <span>Birthday 🥂</span>
+        <span>Birthday 🥂🍫✨</span>
 
         <span>My Dear Sweet ♥️</span>
 
@@ -255,7 +339,7 @@ p{
     </p>
 
     <div class="love">
-        Love You Endless 😍🎉
+        Love You Endless ✨🌸♥️
     </div>
 
 </div>
