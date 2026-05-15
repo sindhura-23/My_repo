@@ -1,50 +1,290 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Happy Birthday Sister 🎂</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body{
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            text-align:center;
-            font-family: Arial;
-            padding-top:100px;
-            color:white;
-        }
+<title>Happy Birthday Sister 🎂</title>
 
-        h1{
-            font-size:50px;
-        }
+<style>
 
-        p{
-            font-size:25px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .card{
-            background: rgba(255,255,255,0.2);
-            padding:40px;
-            border-radius:20px;
-            width:80%;
-            margin:auto;
-        }
-    </style>
+body{
+
+    height:100vh;
+    overflow:hidden;
+
+    font-family:Arial, sans-serif;
+
+    background-image:url('Snapchat-851764982.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Dark Overlay */
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.45);
+}
+
+/* Message Box */
+
+.message{
+
+    position:relative;
+    z-index:2;
+
+    width:90%;
+
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(4px);
+
+    box-shadow:0 0 25px rgba(255,255,255,0.2);
+}
+
+/* Animated Birthday Text */
+
+.birthday-text{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.birthday-text span{
+
+    opacity:0;
+
+    font-size:58px;
+
+    font-weight:bold;
+
+    color:#ff66b2;
+
+    text-shadow:
+    0 0 10px #ff66b2,
+    0 0 20px #ff66b2,
+    0 0 40px white;
+
+    animation:
+    showWords 1.5s forwards,
+    sparkle 1.5s infinite alternate;
+}
+
+.birthday-text span:nth-child(1){
+    animation-delay:0s;
+}
+
+.birthday-text span:nth-child(2){
+    animation-delay:1.5s;
+}
+
+.birthday-text span:nth-child(3){
+    animation-delay:3s;
+}
+
+@keyframes showWords{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes sparkle{
+
+    from{
+        text-shadow:
+        0 0 10px #ff66b2,
+        0 0 20px #ff66b2;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px white,
+        0 0 40px #ff66b2,
+        0 0 60px white;
+    }
+}
+
+/* Message Paragraph */
+
+p{
+
+    color:white;
+
+    font-size:23px;
+
+    line-height:1.8;
+
+    margin-top:25px;
+}
+
+/* Love Text */
+
+.love{
+
+    margin-top:25px;
+
+    color:#ffd6eb;
+
+    font-size:30px;
+
+    font-weight:bold;
+}
+
+/* Fireworks */
+
+.firework{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    animation:blast 1.8s infinite;
+}
+
+.firework:nth-child(1){
+
+    top:15%;
+    left:20%;
+
+    background:red;
+
+    animation-delay:0s;
+}
+
+.firework:nth-child(2){
+
+    top:25%;
+    left:75%;
+
+    background:yellow;
+
+    animation-delay:0.5s;
+}
+
+.firework:nth-child(3){
+
+    top:70%;
+    left:15%;
+
+    background:cyan;
+
+    animation-delay:1s;
+}
+
+.firework:nth-child(4){
+
+    top:75%;
+    left:80%;
+
+    background:magenta;
+
+    animation-delay:1.5s;
+}
+
+@keyframes blast{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+        box-shadow:
+        0 0 10px white,
+        0 0 20px white;
+    }
+
+    100%{
+
+        transform:scale(15);
+
+        opacity:0;
+
+        box-shadow:
+        0 0 50px white,
+        0 0 100px white;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="overlay"></div>
 
-    <h1>🎉 Happy Birthday Sis 🎂</h1>
+<!-- Fireworks -->
+
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+
+<!-- Birthday Message -->
+
+<div class="message">
+
+    <div class="birthday-text">
+
+        <span>Happy ✨</span>
+
+        <span>Birthday ✨🌸🎉</span>
+
+        <span>My Lovely Sister 🌸🥰</span>
+
+    </div>
 
     <p>
-        You are my first friend, best friend ❤️
+        You are my best friend,<br>
+        my support and my forever happiness ❤️
     </p>
 
     <p>
-        May your smile always stay this beautiful ✨
+        Thank you for filling my life
+        with love, laughter and beautiful memories ✨
     </p>
 
-    <h2>Love You So Much 💖</h2>
+<p>
+        you will always be my favorite person forever 💕
+    </p>
+
+    <div class="love">
+        Love You Endless 💖
+    </div>
 
 </div>
 
